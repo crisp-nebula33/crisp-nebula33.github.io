@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>b站官网-哔哩哔哩官网首页_弹幕视频网站入口</title>
+<meta name="description" content="b站官网是哔哩哔哩弹幕视频网站官方入口，提供动画、番剧、游戏、知识、科技、生活、鬼畜、音乐、舞蹈、美食、影视等分区内容，支持弹幕互动、直播观看与UP主投稿。">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fb7299'/%3E%3Cpath d='M18 22h28v16a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6z' fill='%23fff'/%3E%3Cpath d='M22 22l-4-6M42 22l4-6' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='27' cy='31' r='2.6' fill='%23fb7299'/%3E%3Ccircle cx='37' cy='31' r='2.6' fill='%23fb7299'/%3E%3C/svg%3E">
+<style>
+:root{
+  --pink:#fb7299;
+  --pink-deep:#e25a83;
+  --blue:#00a1d6;
+  --ink:#18191c;
+  --ink-2:#41444b;
+  --ink-3:#6d7278;
+  --line:#e7e9ec;
+  --bg:#f7f8fa;
+  --card:#ffffff;
+  --radius:14px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+
+/* header */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;gap:26px;
+  height:66px;
+}
+.logo{
+  display:flex;align-items:center;gap:9px;
+  font-weight:800;font-size:19px;letter-spacing:.5px;
+  color:var(--ink);white-space:nowrap;
+}
+.logo .mark{
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,var(--pink),var(--blue));
+  display:grid;place-items:center;flex:none;
+}
+.logo .mark svg{width:20px;height:20px;}
+.nav{
+  display:flex;gap:4px;flex:1;overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{
+  padding:7px 13px;border-radius:8px;
+  font-size:14.5px;color:var(--ink-2);white-space:nowrap;
+  transition:background .18s,color .18s;
+}
+.nav a:hover{background:#fff0f5;color:var(--pink-deep);}
+.header-cta{
+  flex:none;padding:8px 18px;border-radius:999px;
+  background:var(--pink);color:#fff;font-size:14px;font-weight:600;
+  transition:background .18s;
+}
+.header-cta:hover{background:var(--pink-deep);}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 380px at 88% -10%,rgba(0,161,214,.20),transparent 62%),
+    radial-gradient(760px 420px at 4% 0%,rgba(251,114,153,.24),transparent 60%),
+    #fff;
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:44px;align-items:center;
+  padding:56px 0 58px;
+}
+.hero h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.22;margin:0 0 16px;
+  letter-spacing:-.5px;font-weight:800;
+}
+.hero h1 .hl{
+  background:linear-gradient(180deg,transparent 62%,rgba(251,114,153,.32) 62%);
+  padding:0 2px;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:600;color:var(--pink-deep);
+  background:#fff0f5;border:1px solid #ffd9e4;
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--pink);}
+.hero p.lead{
+  font-size:16px;color:var(--ink-2);margin:0 0 26px;max-width:36em;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 24px;border-radius:999px;
+  font-size:15px;font-weight:600;
+  transition:transform .16s,box-shadow .16s,background .16s;
+}
+.btn-primary{background:var(--pink);color:#fff;box-shadow:0 8px 22px rgba(251,114,153,.32);}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(251,114,153,.4);}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line);}
+.btn-ghost:hover{border-color:#cfd4da;transform:translateY(-1px);}
+.btn svg{width:16px;height:16px;}
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:30px;
+  border-top:1px dashed var(--line);padding-top:20px;
+}
+.hero-stats div strong{
+  display:block;font-size:20px;font-weight:800;color:var(--ink);
+}
+.hero-stats div span{font-size:13px;color:var(--ink-3);}
+
+.hero-visual{position:relative;}
+.tv-card{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  box-shadow:0 24px 54px rgba(24,25,28,.10);
+  padding:16px;position:relative;
+}
+.tv-screen{
+  border-radius:13px;overflow:hidden;
+  background:linear-gradient(150deg,#1d1f24,#2c3038);
+  aspect-ratio:16/9;position:relative;
+  display:grid;place-items:center;
+}
+.tv-screen svg{width:76%;height:auto;}
+.danmu{
+  position:absolute;left:0;right:0;top:12px;
+  display:flex;flex-direction:column;gap:6px;padding:0 12px;
+  pointer-events:none;
+}
+.danmu span{
+  align-self:flex-start;font-size:11px;color:#fff;
+  background:rgba(0,0,0,.38);padding:2px 9px;border-radius:999px;
+  white-space:nowrap;
+}
+.danmu span:nth-child(2){align-self:flex-end;background:rgba(251,114,153,.8);}
+.danmu span:nth-child(3){align-self:center;}
+.tv-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 4px 2px;font-size:13px;color:var(--ink-3);
+}
+.tv-bar b{color:var(--ink);font-weight:600;}
+.badge-float{
+  position:absolute;right:-12px;bottom:-16px;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:9px 14px;font-size:13px;font-weight:600;
+  box-shadow:0 12px 28px rgba(24,25,28,.12);
+  display:flex;align-items:center;gap:8px;
+}
+.badge-float i{width:8px;height:8px;border-radius:50%;background:#00b578;flex:none;}
+
+/* sections */
+section{padding:56px 0;}
+.sec-head{margin-bottom:28px;}
+.sec-head .kicker{
+  font-size:13px;font-weight:700;letter-spacing:1.5px;
+  color:var(--pink-deep);text-transform:uppercase;margin-bottom:8px;
+}
+.sec-head h2{
+  font-size:clamp(21px,2.6vw,27px);margin:0 0 10px;
+  font-weight:800;letter-spacing:-.3px;
+}
+.sec-head p{margin:0;color:var(--ink-3);font-size:15px;max-width:46em;}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px;
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(24,25,28,.07);border-color:#dfe3e8;}
+.card .ico{
+  width:44px;height:44px;border-radius:12px;
+  display:grid;place-items:center;margin-bottom:16px;
+}
+.card .ico svg{width:22px;height:22px;}
+.ico-pink{background:#fff0f5;color:var(--pink-deep);}
+.ico-blue{background:#e8f7fd;color:#0087b3;}
+.ico-green{background:#eafaf1;color:#0a9d63;}
+.ico-purple{background:#f2efff;color:#6a4fd8;}
+.ico-orange{background:#fff4e8;color:#c9760d;}
+.ico-gray{background:#f0f2f5;color:#4b5058;}
+.card h3{font-size:17px;margin:0 0 9px;font-weight:700;}
+.card p{margin:0;font-size:14.5px;color:var(--ink-3);line-height:1.72;}
+.card ul{margin:12px 0 0;padding-left:18px;font-size:14px;color:var(--ink-3);}
+.card ul li{margin-bottom:5px;}
+
+/* zones */
+.zone-strip{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;
+}
+.zone-strip a{
+  font-size:14px;padding:8px 16px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);color:var(--ink-2);
+  transition:all .16s;
+}
+.zone-strip a:hover{background:var(--pink);border-color:var(--pink);color:#fff;}
+
+/* list panel */
+.panel{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:30px 32px;
+}
+.panel h3{font-size:18px;margin:0 0 6px;}
+.panel .sub{font-size:14px;color:var(--ink-3);margin:0 0 20px;}
+.step-list{list-style:none;margin:0;padding:0;counter-reset:s;}
+.step-list li{
+  position:relative;padding-left:44px;padding-bottom:20px;
+  border-left:2px solid #f0f2f5;margin-left:14px;
+}
+.step-list li:last-child{border-left-color:transparent;padding-bottom:0;}
+.step-list li::before{
+  counter-increment:s;content:counter(s);
+  position:absolute;left:-15px;top:0;
+  width:28px;height:28px;border-radius:50%;
+  background:#fff0f5;color:var(--pink-deep);
+  font-size:13px;font-weight:700;
+  display:grid;place-items:center;border:2px solid #fff;
+}
+.step-list b{display:block;font-size:15px;margin-bottom:3px;}
+.step-list span{font-size:14px;color:var(--ink-3);}
+
+/* search demo */
+.toolbar{
+  display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px;
+  padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px;
+}
+.toolbar input{
+  flex:1;min-width:200px;padding:10px 16px;border-radius:10px;
+  border:1px solid var(--line);font-size:14.5px;font-family:inherit;
+  outline:none;transition:border-color .16s,box-shadow .16s;
+  background:#fbfbfc;color:var(--ink);
+}
+.toolbar input:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(251,114,153,.16);background:#fff;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{
+  padding:8px 16px;border-radius:999px;font-size:14px;cursor:pointer;
+  border:1px solid var(--line);background:#fff;color:var(--ink-2);
+  transition:all .15s;
+}
+.chip:hover{border-color:var(--pink);color:var(--pink-deep);}
+.chip.active{background:var(--pink);border-color:var(--pink);color:#fff;}
+.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.result{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:18px;display:flex;flex-direction:column;gap:8px;
+  transition:border-color .16s,box-shadow .16s;
+}
+.result:hover{border-color:#ffd0de;box-shadow:0 10px 24px rgba(251,114,153,.10);}
+.result .tag{
+  font-size:12px;color:var(--pink-deep);font-weight:600;
+}
+.result h4{margin:0;font-size:15.5px;line-height:1.5;}
+.result p{margin:0;font-size:13.5px;color:var(--ink-3);line-height:1.65;}
+.empty{grid-column:1/-1;text-align:center;color:var(--ink-3);font-size:14.5px;padding:34px 0;}
+
+/* quote */
+.quote-band{
+  background:linear-gradient(120deg,#fff5f8,#f2fbff);
+  border:1px solid var(--line);border-radius:18px;
+  padding:34px 34px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px;
+}
+.quote-band blockquote{
+  margin:0;font-size:15px;color:var(--ink-2);line-height:1.8;
+}
+.quote-band cite{
+  display:block;margin-top:12px;font-style:normal;
+  font-size:13.5px;color:var(--ink-3);font-weight:600;
+}
+
+/* download */
+.dl-box{
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:32px;display:flex;flex-wrap:wrap;gap:26px;
+  align-items:center;justify-content:space-between;
+}
+.dl-box .txt h3{margin:0 0 8px;font-size:19px;}
+.dl-box .txt p{margin:0;font-size:14.5px;color:var(--ink-3);max-width:38em;}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:12px 28px;border-radius:999px;
+  background:var(--ink);color:#fff;font-size:15px;font-weight:600;
+  pointer-events:none;
+}
+.dl-btn svg{width:16px;height:16px;}
+
+/* footer */
+footer{
+  background:#fff;border-top:1px solid var(--line);
+  padding:40px 0 28px;margin-top:20px;
+}
+.foot-top{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;
+  padding-bottom:26px;border-bottom:1px solid var(--line);
+}
+.foot-top .logo{margin-bottom:12px;}
+.foot-top p{font-size:13.5px;color:var(--ink-3);margin:0;max-width:30em;line-height:1.75;}
+.foot-col h4{font-size:14px;margin:0 0 12px;font-weight:700;}
+.foot-col a{display:block;font-size:13.5px;color:var(--ink-3);margin-bottom:8px;}
+.foot-col a:hover{color:var(--pink-deep);}
+.foot-bottom{
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  padding-top:20px;font-size:13px;color:var(--ink-3);
+}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:34px;padding:40px 0 46px;}
+  .hero-visual{order:2;}
+  .grid-3,.result-grid{grid-template-columns:repeat(2,1fr);}
+  .quote-band{grid-template-columns:1fr;}
+  .foot-top{grid-template-columns:1fr 1fr;gap:24px;}
+}
+@media(max-width:640px){
+  .header-inner{height:58px;gap:12px;}
+  .logo{font-size:16px;}
+  .logo .mark{width:29px;height:29px;border-radius:8px;}
+  .header-cta{display:none;}
+  .nav a{padding:6px 10px;font-size:13.5px;}
+  .grid-3,.grid-2,.result-grid{grid-template-columns:1fr;}
+  section{padding:40px 0;}
+  .panel,.dl-box,.quote-band{padding:22px;}
+  .hero-stats{gap:22px;}
+  .foot-top{grid-template-columns:1fr;}
+  .badge-float{right:0;bottom:-14px;font-size:12px;padding:7px 11px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12v7a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z" fill="#fff"/><path d="M8 8L6 4M16 8l2-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="12" r="1.2" fill="#fb7299"/><circle cx="14" cy="12" r="1.2" fill="#fb7299"/></svg>
+      </span>
+      b站官网
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#zones">分区内容</a>
+      <a href="#features">站点功能</a>
+      <a href="#find">内容查找</a>
+      <a href="#start">上手路径</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="header-cta" href="#features">进入站点</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow"><i></i>哔哩哔哩弹幕视频网站官方入口</span>
+        <h1 id="hero-title">b站官网</h1>
+        <p class="lead">b站官网指向哔哩哔哩的官方站点。这里以弹幕视频为核心，汇集动画、番剧、游戏、知识、科技、生活、鬼畜、音乐、舞蹈、美食与影视等分区，用户可以边看边发弹幕，也可以关注UP主、参与直播、投稿自己的作品。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#features">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            了解站点功能
+          </a>
+          <a class="btn btn-ghost" href="#zones">浏览分区内容</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>11+</strong><span>内容分区方向</span></div>
+          <div><strong>弹幕</strong><span>实时评论互动</span></div>
+          <div><strong>直播</strong><span>与UP主同屏</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="tv-card">
+          <div class="tv-screen">
+            <div class="danmu">
+              <span>前方高能</span>
+              <span>这个UP主更新好快</span>
+              <span>一键三连走起</span>
+            </div>
+            <svg viewBox="0 0 200 120" fill="none">
+              <rect x="26" y="30" width="148" height="72" rx="12" fill="#fb7299" opacity=".92"/>
+              <path d="M58 78V52l22 13z" fill="#fff"/>
+              <path d="M120 56h34M120 68h26M120 80h30" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+            </svg>
+          </div>
+          <div class="tv-bar"><b>弹幕视频播放</b><span>全屏 · 清晰度 · 倍速</span></div>
+        </div>
+        <div class="badge-float"><i></i>官方站点入口</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONES -->
+  <section id="zones">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Content Zones</div>
+        <h2>从动画到知识，按兴趣分区浏览</h2>
+        <p>b站官网的内容以分区组织，不同分区对应不同的观看习惯与社区氛围。新用户可以先从日常关注的方向进入，再逐步扩展到其他分区。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico ico-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="3" y="5" width="18" height="13" rx="2.5"/><path d="M8 21h8M12 18v3"/></svg></div>
+          <h3>动画与番剧</h3>
+          <p>动画、番剧是站内长期积累的观看入口，正版番剧按季度编排，配合弹幕形成同步追番的体验。</p>
+          <ul><li>番剧按季度更新</li><li>支持追番与更新提醒</li></ul>
+        </article>
+        <article class="card">
+          <div class="ico ico-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16v10H4z"/><path d="M9 12l6-3v6z" fill="currentColor" stroke="none"/></svg></div>
+          <h3>游戏与科技</h3>
+          <p>游戏区覆盖攻略、实况与赛事内容，科技区则集中数码评测、编程与硬件知识，二者常与直播联动。</p>
+          <ul><li>攻略、实况与赛事</li><li>数码评测与编程内容</li></ul>
+        </article>
+        <article class="card">
+          <div class="ico ico-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 5h16v13H4z"/><path d="M8 9h8M8 13h5"/></svg></div>
+          <h3>知识与生活</h3>
+          <p>知识区包含科普、历史、人文与学习类内容，生活区则记录日常、美食与出行，适合碎片时间浏览。</p>
+          <ul><li>科普与学习内容</li><li>美食、日常与出行</li></ul>
+        </article>
+        <article class="card">
+          <div class="ico ico-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 12a8 8 0 1 1 16 0"/><path d="M9 16l3-4 3 4"/></svg></div>
+          <h3>音乐与舞蹈</h3>
+          <p>音乐区有原创、翻唱与演奏，舞蹈区以宅舞、街舞与编舞展示为主，评论与弹幕互动活跃。</p>
+          <ul><li>原创、翻唱与演奏</li><li>宅舞与编舞展示</li></ul>
+        </article>
+        <article class="card">
+          <div class="ico ico-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 3v18M5 8h14M5 16h14"/></svg></div>
+          <h3>鬼畜与影视</h3>
+          <p>鬼畜区以二次剪辑与创意编排见长，影视区则集中解说、混剪与影评，两者都强调内容再创作。</p>
+          <ul><li>二次剪辑与创意编排</li><li>影视解说与混剪</li></ul>
+        </article>
+        <article class="card">
+          <div class="ico ico-gray"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>直播与动态</h3>
+          <p>直播区提供实时观看与弹幕互动，动态页则把关注的UP主更新集中呈现，方便快速浏览新内容。</p>
+          <ul><li>实时直播与弹幕</li><li>关注动态集中查看</li></ul>
+        </article>
+      </div>
+      <div class="zone-strip" aria-label="热门分区快捷入口">
+        <a href="#zones">动画</a><a href="#zones">番剧</a><a href="#zones">游戏</a><a href="#zones">知识</a>
+        <a href="#zones">科技</a><a href="#zones">生活</a><a href="#zones">鬼畜</a><a href="#zones">音乐</a>
+        <a href="#zones">舞蹈</a><a href="#zones">美食</a><a href="#zones">影视</a><a href="#zones">直播</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Core Features</div>
+        <h2>弹幕、关注、投稿：站点的三件事</h2>
+        <p>在b站官网，观看并不是唯一动作。弹幕让评论与画面同步，关注让更新可被追踪，投稿让用户从观众变成内容生产者。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico ico-pink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 6h16v9H9l-5 4z"/></svg></div>
+          <h3>弹幕互动</h3>
+          <p>弹幕按时间点出现在画面上，用户可以发送文字、选择样式，并可在播放器内开关弹幕显示，兼顾互动与观看。</p>
+        </article>
+        <article class="card">
+          <div class="ico ico-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+          <h3>关注与追番</h3>
+          <p>关注UP主后，其新投稿会出现在动态中；追番功能则记录番剧进度，更新时给出提醒，减少手动查找。</p>
+        </article>
+        <article class="card">
+          <div class="ico ico-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 4v10M8 10l4 4 4-4"/><path d="M5 18h14"/></svg></div>
+          <h3>UP主投稿</h3>
+          <p>注册用户可投稿视频、专栏与音频等稿件，投稿后台提供标题、封面、分区与标签等基础信息填写项。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND -->
+  <section id="find">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Find Content</div>
+        <h2>按关键词快速找到想看的稿件</h2>
+        <p>下面是一个演示用的内容筛选区，输入分区或主题关键词即可过滤条目，帮助你理解在b站官网查找内容的常见路径。</p>
+      </div>
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="输入关键词，如 番剧、科技、鬼畜" aria-label="搜索内容条目">
+        <div class="chips" id="chips" role="group" aria-label="快捷筛选">
+          <button class="chip active" data-kw="">全部</button>
+          <button class="chip" data-kw="动画">动画</button>
+          <button class="chip" data-kw="知识">知识</button>
+          <button class="chip" data-kw="游戏">游戏</button>
+          <button class="chip" data-kw="直播">直播</button>
+        </div>
+      </div>
+      <div class="result-grid" id="resultGrid">
+        <article class="result" data-tag="动画 番剧"><span class="tag">动画 · 番剧</span><h4>季度新番追番清单</h4><p>按季度整理的番剧条目，配合追番功能记录观看进度。</p></article>
+        <article class="result" data-tag="知识 科普"><span class="tag">知识 · 科普</span><h4>十分钟读懂一个科学概念</h4><p>知识区的短科普内容，适合通勤与碎片时间观看。</p></article>
+        <article class="result" data-tag="游戏 实况"><span class="tag">游戏 · 实况</span><h4>新游实况与玩法拆解</h4><p>游戏区实况视频常配合攻略说明，帮助理解玩法机制。</p></article>
+        <article class="result" data-tag="直播 互动"><span class="tag">直播 · 互动</span><h4>直播间弹幕互动现场</h4><p>直播区支持实时弹幕，观众可与主播同屏交流。</p></article>
+        <article class="result" data-tag="鬼畜 剪辑"><span class="tag">鬼畜 · 剪辑</span><h4>二次剪辑的节奏感</h4><p>鬼畜区以素材重组与节奏编排为主要创作手法。</p></article>
+        <article class="result" data-tag="知识 学习"><span class="tag">知识 · 学习</span><h4>公开课与学习笔记</h4><p>知识区包含课程类内容，评论区常见学习笔记整理。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- START -->
+  <section id="start" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Get Started</div>
+        <h2>第一次访问b站官网的四个步骤</h2>
+        <p>如果你还不熟悉这个站点，可以按下面的顺序完成从浏览到互动的过渡，每一步都不需要额外工具。</p>
+      </div>
+      <div class="grid-2" style="align-items:start;">
+        <div class="panel">
+          <h3>从浏览到互动</h3>
+          <p class="sub">适用于首次使用弹幕视频网站的用户</p>
+          <ol class="step-list">
+            <li><b>选择感兴趣的分区</b><span>先在导航中进入动画、知识或游戏等分区，看看推荐内容。</span></li>
+            <li><b>打开一个视频并开启弹幕</b><span>播放器内可开关弹幕，调整字号与透明度，找到合适的观看强度。</span></li>
+            <li><b>关注喜欢的UP主</b><span>关注后新投稿会出现在动态页，追番也会同步记录进度。</span></li>
+            <li><b>尝试投稿或参与评论</b><span>注册用户可投稿稿件，也可以先在评论区与弹幕中表达看法。</span></li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>浏览时值得留意的细节</h3>
+          <p class="sub">帮助判断内容与账号的可信来源</p>
+          <ul class="step-list" style="list-style:none;">
+            <li><b>看UP主主页与认证标识</b><span>主页能看到过往投稿与简介，认证信息有助于判断账号身份。</span></li>
+            <li><b>留意分区与标签</b><span>分区和标签决定内容归类，也影响后续推荐的方向。</span></li>
+            <li><b>关注稿件发布时间</b><span>部分内容具有时效性，发布时间能帮助判断信息的新旧程度。</span></li>
+            <li><b>弹幕与评论分开看</b><span>弹幕偏即时反应，评论区长文更多，两者结合能获得更完整的反馈。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE / FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Community Voice</div>
+        <h2>用户怎么描述自己的使用习惯</h2>
+        <p>以下为站内常见的用户表达方式，反映了弹幕视频社区中观看、互动与创作之间的关系。</p>
+      </div>
+      <div class="quote-band">
+        <blockquote>
+          “追番的时候一定会开弹幕，看到大家都在同一时间点发同一句话，会觉得不是一个人在看。”
+          <cite>—— 番剧区长期观众</cite>
+        </blockquote>
+        <blockquote>
+          “知识区是我用得最多的部分，视频下面经常有人整理时间轴和参考资料，比单纯看视频更方便。”
+          <cite>—— 知识区用户</cite>
+        </blockquote>
+        <blockquote>
+          “第一次投稿很紧张，但评论区会给出具体建议，比如封面、标题和节奏，这些反馈挺实用。”
+          <cite>—— 新手UP主</cite>
+        </blockquote>
+        <blockquote>
+          “直播和视频的弹幕氛围不太一样，直播更即时，视频可以反复看某一段弹幕。”
+          <cite>—— 直播区观众</cite>
+        </blockquote>
+      </div>
+
+      <div class="grid-2" style="margin-top:26px;">
+        <article class="card">
+          <h3>b站官网和普通视频网站有什么不同？</h3>
+          <p>核心差异在弹幕与社区结构。弹幕把评论叠加到画面上，形成时间同步的观看体验；分区与UP主体系则让内容生产与消费围绕账号展开。</p>
+        </article>
+        <article class="card">
+          <h3>不注册可以浏览内容吗？</h3>
+          <p>通常可以直接浏览与播放大部分公开内容。关注、投稿、发送弹幕等操作需要登录账号，具体权限以站点页面提示为准。</p>
+        </article>
+        <article class="card">
+          <h3>如何找到特定UP主的全部投稿？</h3>
+          <p>进入UP主个人主页即可查看其投稿、动态与合集。主页通常按时间或分区归类，合集功能便于连续观看系列内容。</p>
+        </article>
+        <article class="card">
+          <h3>投稿前需要准备什么？</h3>
+          <p>准备好视频文件、封面图与标题描述，选择合适分区并填写标签即可进入投稿流程。稿件审核与发布状态可在投稿后台查看。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="dl-box">
+        <div class="txt">
+          <h3>获取b站官网客户端</h3>
+          <p>客户端支持移动端观看、弹幕开关、离线缓存与消息提醒，适合在手机上追番和浏览动态。下载入口将在正式地址就绪后开放。</p>
+        </div>
+        <a class="dl-btn" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4v10M8 10l4 4 4-4"/><path d="M5 19h14"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="logo" href="#top">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12v7a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z" fill="#fff"/><path d="M8 8L6 4M16 8l2-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="12" r="1.2" fill="#fb7299"/><circle cx="14" cy="12" r="1.2" fill="#fb7299"/></svg>
+          </span>
+          b站官网
+        </a>
+        <p>b站官网是哔哩哔哩弹幕视频网站的官方入口说明页，围绕分区内容、弹幕互动、关注追番与UP主投稿整理访问路径。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容分区</h4>
+        <a href="#zones">动画与番剧</a>
+        <a href="#zones">游戏与科技</a>
+        <a href="#zones">知识与生活</a>
+        <a href="#zones">音乐与舞蹈</a>
+      </div>
+      <div class="foot-col">
+        <h4>使用帮助</h4>
+        <a href="#features">站点功能</a>
+        <a href="#find">内容查找</a>
+        <a href="#start">上手路径</a>
+        <a href="#faq">常见问题</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>b站官网 · 弹幕视频网站入口页面说明</span>
+      <span>页面内容以站点公开信息与实际功能范围为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('searchInput');
+  var chips = document.querySelectorAll('#chips .chip');
+  var items = document.querySelectorAll('#resultGrid .result');
+  var grid = document.getElementById('resultGrid');
+  var empty = document.createElement('div');
+  empty.className = 'empty';
+  empty.textContent = '没有匹配的条目，换个关键词试试。';
+
+  function apply(kw){
+    var q = (kw || '').trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function(el){
+      var tag = (el.getAttribute('data-tag') || '').toLowerCase();
+      var text = el.textContent.toLowerCase();
+      var hit = !q || tag.indexOf(q) > -1 || text.indexOf(q) > -1;
+      el.style.display = hit ? '' : 'none';
+      if(hit) shown++;
+    });
+    if(shown === 0){
+      if(!empty.parentNode) grid.appendChild(empty);
+    } else if(empty.parentNode){
+      empty.parentNode.removeChild(empty);
+    }
+  }
+
+  input.addEventListener('input', function(){
+    chips.forEach(function(c){ c.classList.remove('active'); });
+    apply(input.value);
+  });
+
+  chips.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      btn.classList.add('active');
+      var kw = btn.getAttribute('data-kw') || '';
+      input.value = kw;
+      apply(kw);
+    });
+  });
+})();
+</script>
+
+</body>
+                                            </html>
