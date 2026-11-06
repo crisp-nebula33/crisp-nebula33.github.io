@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄果短剧直接看-黄果短剧在线观看_短剧免费直接看</title>
+<meta name="description" content="黄果短剧直接看，汇集热门短剧在线观看入口，无需跳转即可浏览剧情、剧集与推荐片单，快速找到想看的短剧内容。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f2a1a'/%3E%3Ccircle cx='32' cy='30' r='15' fill='%23f2c14e'/%3E%3Cpath d='M32 12c3 6 3 10 0 15-3-5-3-9 0-15z' fill='%238bbf5a'/%3E%3Cpath d='M27 34l11 6-11 6z' fill='%231f2a1a'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f4ec;
+  --ink:#1f2a1a;
+  --ink-soft:#4c5546;
+  --leaf:#3f6b39;
+  --leaf-deep:#28461f;
+  --gold:#e2a72e;
+  --gold-soft:#f6e2b3;
+  --card:#fffdf7;
+  --line:#e3ddcb;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;max-width:100%;}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* 页头 */
+.site-head{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,244,236,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{display:flex;align-items:center;gap:24px;min-height:68px;flex-wrap:wrap;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;color:var(--leaf-deep);}
+.logo svg{width:34px;height:34px;flex:none;}
+.nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap;}
+.nav a{font-size:15px;color:var(--ink-soft);padding:6px 0;border-bottom:2px solid transparent;transition:.2s;}
+.nav a:hover{color:var(--leaf);border-bottom-color:var(--gold);}
+
+/* 首屏 */
+.hero{padding:56px 0 44px;position:relative;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold-soft);color:#7a5310;
+  font-size:13px;font-weight:600;letter-spacing:1px;
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+.kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);}
+h1{
+  font-size:clamp(28px,4.4vw,44px);
+  line-height:1.25;font-weight:900;letter-spacing:1px;color:var(--ink);
+  margin-bottom:16px;
+}
+h1 em{font-style:normal;color:var(--leaf);}
+.lead{font-size:16.5px;color:var(--ink-soft);max-width:34em;margin-bottom:26px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:999px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--leaf-deep);color:#fff;}
+.btn-primary:hover{background:var(--leaf);}
+.btn-ghost{background:transparent;color:var(--leaf-deep);border-color:#c9d3bf;}
+.btn-ghost:hover{border-color:var(--leaf);background:#eef2e7;}
+.btn[aria-disabled="true"]{opacity:.75;cursor:default;}
+.hero-art{
+  background:linear-gradient(150deg,#eef2e3,#f9efd3);
+  border-radius:24px;padding:22px;border:1px solid var(--line);
+}
+.hero-art .art-cap{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;color:var(--ink-soft);margin-bottom:12px;letter-spacing:.5px;
+}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.tag{
+  font-size:12.5px;background:#fff;border:1px solid var(--line);
+  color:var(--ink-soft);padding:4px 11px;border-radius:999px;
+}
+
+/* 区块通用 */
+section{padding:46px 0;}
+.sec-head{margin-bottom:26px;}
+.sec-head h2{
+  font-size:clamp(21px,2.6vw,27px);font-weight:800;letter-spacing:.5px;
+  display:flex;align-items:center;gap:12px;
+}
+.sec-head h2::before{
+  content:"";width:5px;height:22px;border-radius:3px;
+  background:linear-gradient(var(--gold),var(--leaf));flex:none;
+}
+.sec-head p{color:var(--ink-soft);font-size:15px;margin-top:8px;max-width:46em;}
+
+/* 卡片 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:10px;transition:.2s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px -18px rgba(40,70,31,.5);border-color:#cfd9c3;}
+.card .no{
+  font-size:12px;font-weight:700;color:var(--gold);
+  letter-spacing:1.5px;
+}
+.card h3{font-size:17px;font-weight:700;color:var(--leaf-deep);}
+.card p{font-size:14.5px;color:var(--ink-soft);}
+.card .meta{font-size:12.5px;color:#8a9078;margin-top:auto;padding-top:6px;border-top:1px dashed var(--line);}
+
+/* 列表 + 侧栏 */
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:34px;align-items:start;}
+.list{display:flex;flex-direction:column;gap:14px;}
+.item{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;display:flex;gap:14px;align-items:flex-start;
+}
+.item .dot{
+  width:36px;height:36px;flex:none;border-radius:10px;
+  background:#eef2e3;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:14px;color:var(--leaf-deep);
+}
+.item h4{font-size:15.5px;font-weight:700;margin-bottom:3px;}
+.item p{font-size:14px;color:var(--ink-soft);}
+.side{
+  background:#22301c;color:#dfe6d5;border-radius:var(--radius);
+  padding:24px;font-size:14.5px;
+}
+.side h3{font-size:16px;color:#fff;margin-bottom:12px;font-weight:700;}
+.side ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.side li{display:flex;gap:9px;line-height:1.65;}
+.side li::before{content:"◆";color:var(--gold);font-size:10px;line-height:1.9;}
+.side .side-note{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:13px;color:#a9b6a0;}
+
+/* 正文段落 */
+.prose{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;}
+.prose h3{font-size:18px;font-weight:800;color:var(--leaf-deep);margin:20px 0 8px;}
+.prose h3:first-child{margin-top:0;}
+.prose p{font-size:15px;color:var(--ink-soft);margin-bottom:12px;}
+.prose strong{color:var(--leaf-deep);}
+
+/* 搜索 */
+.search-box{
+  display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;
+}
+.search-box input{
+  flex:1;min-width:200px;padding:12px 16px;border-radius:999px;
+  border:1px solid #cfd9c3;background:#fff;font-size:15px;color:var(--ink);
+  font-family:inherit;outline:none;
+}
+.search-box input:focus{border-color:var(--leaf);box-shadow:0 0 0 3px rgba(63,107,57,.12);}
+.search-box button{
+  padding:12px 26px;border-radius:999px;border:none;cursor:pointer;
+  background:var(--gold);color:#3a2a05;font-weight:700;font-size:15px;font-family:inherit;
+  transition:.2s;
+}
+.search-box button:hover{background:#d69a20;}
+.search-hint{font-size:13.5px;color:#8a9078;margin-top:10px;}
+
+/* 页尾 */
+footer{
+  background:#1c2717;color:#b9c4ae;margin-top:20px;padding:38px 0 28px;font-size:14px;
+}
+.foot-grid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#f0ede1;font-weight:800;font-size:16px;}
+.foot-brand svg{width:28px;height:28px;}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap;}
+.foot-links a:hover{color:var(--gold);}
+.foot-bottom{margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#7f8b75;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .split{grid-template-columns:1fr;}
+}
+@media (max-width:620px){
+  .head-inner{min-height:60px;gap:12px;}
+  .logo{font-size:16.5px;}
+  .logo svg{width:28px;height:28px;}
+  .nav{gap:14px;margin-left:0;width:100%;padding-bottom:10px;overflow-x:auto;}
+  .nav a{font-size:14px;white-space:nowrap;}
+  .hero{padding:34px 0 26px;}
+  section{padding:32px 0;}
+  .cards{grid-template-columns:1fr;}
+  .prose{padding:20px 18px;}
+  .side{padding:20px;}
+  .btn{padding:11px 20px;font-size:14.5px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="黄果短剧直接看 首页">
+      <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1f2a1a"/>
+        <circle cx="32" cy="31" r="15" fill="#f2c14e"/>
+        <path d="M32 13c3 6 3 10 0 15-3-5-3-9 0-15z" fill="#8bbf5a"/>
+        <path d="M27 25c4 2 7 4 10 6-3 2-6 4-10 6z" fill="#1f2a1a"/>
+      </svg>
+      <span>黄果短剧直接看</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#hot">热门短剧</a>
+      <a href="#howto">观看方式</a>
+      <a href="#picks">片单推荐</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">短剧在线观看入口</span>
+        <h1>黄果短剧直接看</h1>
+        <p class="lead">黄果短剧直接看，把找剧、看剧、追更放在同一个页面里。打开就能浏览热门短剧与分类片单，点开剧集即可直接进入观看，不用在多个页面之间来回跳转。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">直接看热门短剧</a>
+          <a class="btn btn-ghost" href="#picks">浏览片单推荐</a>
+        </div>
+        <div class="tag-row">
+          <span class="tag">都市情感</span>
+          <span class="tag">古装轻喜</span>
+          <span class="tag">悬疑反转</span>
+          <span class="tag">家庭伦理</span>
+          <span class="tag">逆袭成长</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-cap"><span>今日在播片单</span><span>直接看</span></div>
+        <svg viewBox="0 0 320 190" role="img" aria-label="短剧播放界面示意插画">
+          <rect x="0" y="0" width="320" height="190" rx="14" fill="#fffdf7"/>
+          <rect x="14" y="14" width="180" height="112" rx="10" fill="#22301c"/>
+          <circle cx="104" cy="70" r="22" fill="#f2c14e" opacity=".92"/>
+          <path d="M98 58l18 12-18 12z" fill="#22301c"/>
+          <rect x="14" y="136" width="120" height="8" rx="4" fill="#e3ddcb"/>
+          <rect x="14" y="152" width="86" height="8" rx="4" fill="#efe9d8"/>
+          <rect x="206" y="14" width="100" height="34" rx="8" fill="#f6e2b3"/>
+          <rect x="206" y="58" width="100" height="34" rx="8" fill="#eef2e3"/>
+          <rect x="206" y="102" width="100" height="34" rx="8" fill="#eef2e3"/>
+          <rect x="206" y="146" width="64" height="14" rx="7" fill="#f2c14e"/>
+        </svg>
+        <div class="tag-row">
+          <span class="tag">竖屏短剧</span>
+          <span class="tag">连续剧集</span>
+          <span class="tag">免费浏览</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门短剧 -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>热门短剧分区</h2>
+        <p>按题材把短剧分成几类，方便先锁定方向，再进入具体剧集。每个分区下方都给出可以直接点开的入口。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="no">01 / 都市</span>
+          <h3>都市情感短剧</h3>
+          <p>以职场、婚恋、家庭关系为主线，节奏紧凑，单集时长短，适合碎片时间连续观看。</p>
+          <p class="meta">适合通勤、午休时段浏览</p>
+        </article>
+        <article class="card">
+          <span class="no">02 / 古装</span>
+          <h3>古装轻喜短剧</h3>
+          <p>架空背景搭配轻喜剧走向，人物关系清晰，剧情推进快，适合喜欢轻松氛围的观众。</p>
+          <p class="meta">适合整段休闲时间观看</p>
+        </article>
+        <article class="card">
+          <span class="no">03 / 悬疑</span>
+          <h3>悬疑反转短剧</h3>
+          <p>围绕悬念铺设与结局反转展开，每集结尾留有钩子，适合一口气追完的观看方式。</p>
+          <p class="meta">建议按剧集顺序观看</p>
+        </article>
+        <article class="card">
+          <span class="no">04 / 逆袭</span>
+          <h3>逆袭成长短剧</h3>
+          <p>主角从低谷走向转变，情节集中在关键节点，情绪表达直接，是短剧里常见的类型。</p>
+          <p class="meta">适合寻找爽感剧情</p>
+        </article>
+        <article class="card">
+          <span class="no">05 / 家庭</span>
+          <h3>家庭伦理短剧</h3>
+          <p>聚焦代际关系与家庭矛盾，人物冲突贴近日常，适合偏好现实题材的观众。</p>
+          <p class="meta">适合与家人一起讨论剧情</p>
+        </article>
+        <article class="card">
+          <span class="no">06 / 甜宠</span>
+          <h3>甜宠恋爱短剧</h3>
+          <p>以情感互动为核心，剧情轻快，配角线简洁，适合放松时连续观看。</p>
+          <p class="meta">适合睡前轻松浏览</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观看方式 -->
+  <section id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>黄果短剧直接看怎么用</h2>
+        <p>黄果短剧直接看的使用路径很直接：选分区、点剧集、按顺序播放。下面是三个主要环节。</p>
+      </div>
+      <div class="split">
+        <div class="list">
+          <div class="item">
+            <span class="dot">1</span>
+            <div>
+              <h4>先按题材筛选</h4>
+              <p>从都市、古装、悬疑、逆袭、家庭、甜宠六个分区中选一个方向，缩小浏览范围，避免在长列表里反复滑动。</p>
+            </div>
+          </div>
+          <div class="item">
+            <span class="dot">2</span>
+            <div>
+              <h4>再打开具体剧集</h4>
+              <p>点击剧集条目进入详情，查看剧情简介与集数信息，确认题材和主演风格符合预期后再开始播放。</p>
+            </div>
+          </div>
+          <div class="item">
+            <span class="dot">3</span>
+            <div>
+              <h4>按集数顺序追更</h4>
+              <p>短剧剧情连贯性强，建议从第一集开始顺序观看；已看过的剧集可以记录位置，下次接着看。</p>
+            </div>
+          </div>
+          <div class="item">
+            <span class="dot">4</span>
+            <div>
+              <h4>收藏与回看</h4>
+              <p>遇到喜欢的短剧可以先收藏，之后在片单里快速找到，不必重新搜索剧名。</p>
+            </div>
+          </div>
+        </div>
+        <aside class="side">
+          <h3>观看小提示</h3>
+          <ul>
+            <li>竖屏短剧更适合手机全屏观看，横屏时上下会有留白。</li>
+            <li>网络不稳定时可先暂停缓冲，再继续播放。</li>
+            <li>连续观看注意用眼休息，每集结束后可稍作停顿。</li>
+            <li>剧集内容以页面实际展示为准，片单会持续更新。</li>
+          </ul>
+          <p class="side-note">以上为观看习惯建议，不涉及任何账号或付费承诺。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 片单推荐 -->
+  <section id="picks">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>本周片单推荐</h2>
+        <p>从热门分区里挑出几类常被点开的短剧方向，供第一次访问的观众作为起点。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="no">片单 A</span>
+          <h3>通勤半小时能看几集</h3>
+          <p>单集时长较短的都市与甜宠短剧，适合在通勤路上连续看两三集，剧情衔接紧凑，不容易断片。</p>
+          <p class="meta">推荐人群：上班族</p>
+        </article>
+        <article class="card">
+          <span class="no">片单 B</span>
+          <h3>周末一次追完</h3>
+          <p>悬疑反转与逆袭成长类短剧，剧情钩子密集，适合周末整段时间一次看完，体验更完整。</p>
+          <p class="meta">推荐人群：整段空闲时间</p>
+        </article>
+        <article class="card">
+          <span class="no">片单 C</span>
+          <h3>和家人一起看</h3>
+          <p>家庭伦理与古装轻喜类短剧，冲突温和、话题贴近日常，适合与家人边看边聊。</p>
+          <p class="meta">推荐人群：家庭观影</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文介绍 -->
+  <section>
+    <div class="wrap">
+      <div class="prose">
+        <h3>黄果短剧直接看的内容范围</h3>
+        <p>黄果短剧直接看是一个以短剧在线观看为核心的页面，主要承担两件事：一是把不同类型的短剧集中呈现，二是让访问者用尽量少的步骤进入剧集播放。页面不设置复杂注册流程，浏览与选择都集中在同一屏内完成。</p>
+        <p>短剧的特点是单集时长短、剧情推进快、集数相对集中。<strong>黄果短剧直接看</strong>按这一特点组织内容，把题材分区放在前面，把具体剧集入口放在后面，读者可以先判断方向，再决定是否点开某一部。</p>
+        <h3>为什么按题材分区</h3>
+        <p>短剧题材之间的观感差异比较大，都市情感偏现实、古装轻喜偏轻松、悬疑反转偏紧张。按题材分区之后，访问者可以更快找到符合当下心情的内容，也方便在同一分区里横向比较几部剧的简介与集数。</p>
+        <p>如果你只是想随便看看，可以直接从热门分区开始；如果已经有明确偏好，片单推荐里的分类也能作为筛选起点。两种方式都能回到剧集列表，不需要额外跳转。</p>
+        <h3>关于剧集信息与更新</h3>
+        <p>页面展示的剧集简介、集数与题材标签，以实际收录情况为准。短剧更新频率较高，片单会随内容调整，具体可看剧集请以打开后的页面为准。黄果短剧直接看不承诺固定更新数量，也不对单部剧的播出时间作保证。</p>
+        <p>观看过程中如遇加载缓慢，可尝试切换网络或稍后再试。页面内的收藏与记录功能仅用于本地浏览便利，不涉及账号体系。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 搜索与常见问题 -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>找剧与常见问题</h2>
+        <p>输入剧名或题材关键词，快速定位到对应分区；下面是访问者常问的几个问题。</p>
+      </div>
+      <div class="prose">
+        <h3>按剧名或题材找剧</h3>
+        <p>在下方输入框中填写剧名、题材或关键词，点击查找即可定位到页面对应分区。</p>
+        <form class="search-box" id="findForm" role="search">
+          <input type="search" id="findInput" placeholder="例如：都市、悬疑、甜宠、逆袭" aria-label="输入剧名或题材关键词">
+          <button type="submit">查找</button>
+        </form>
+        <p class="search-hint" id="findHint">支持按题材关键词定位到热门分区。</p>
+
+        <h3>黄果短剧直接看需要注册吗</h3>
+        <p>浏览分区、片单与剧集简介无需注册。页面以内容浏览和观看入口为主，不设置强制登录环节。</p>
+        <h3>短剧可以按顺序连续播放吗</h3>
+        <p>可以。短剧剧情连贯，建议从第一集开始顺序观看。播放页通常提供上一集、下一集切换，方便连续追剧。</p>
+        <h3>手机上观看效果如何</h3>
+        <p>短剧多为竖屏拍摄，手机全屏观看更贴合画面比例。页面在移动端已做适配，导航、卡片与字号均按小屏阅读调整。</p>
+        <h3>片单会一直更新吗</h3>
+        <p>片单会随收录内容调整，具体更新节奏以实际页面为准。建议收藏本页，方便下次直接进入。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#f2c14e"/>
+            <circle cx="32" cy="31" r="14" fill="#22301c"/>
+            <path d="M27 25c4 2 7 4 10 6-3 2-6 4-10 6z" fill="#f2c14e"/>
+          </svg>
+          <span>黄果短剧直接看</span>
+        </div>
+        <p style="margin-top:10px;max-width:32em;color:#8d9a83;">短剧在线观看入口与题材分区，帮助访问者更快找到想看的短剧内容。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#hot">热门短剧</a>
+        <a href="#howto">观看方式</a>
+        <a href="#picks">片单推荐</a>
+        <a href="#faq">常见问题</a>
+        <a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none;">下载</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>黄果短剧直接看 · 页面内容以实际收录为准，剧集简介与片单可能随更新调整。</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('findForm');
+  var input = document.getElementById('findInput');
+  var hint = document.getElementById('findHint');
+  var map = [
+    {keys:['都市','情感','职场','婚恋'], target:'#hot', name:'都市情感短剧'},
+    {keys:['古装','轻喜'], target:'#hot', name:'古装轻喜短剧'},
+    {keys:['悬疑','反转'], target:'#hot', name:'悬疑反转短剧'},
+    {keys:['逆袭','成长'], target:'#hot', name:'逆袭成长短剧'},
+    {keys:['家庭','伦理','代际'], target:'#hot', name:'家庭伦理短剧'},
+    {keys:['甜宠','恋爱'], target:'#hot', name:'甜宠恋爱短剧'},
+    {keys:['片单','推荐'], target:'#picks', name:'片单推荐'},
+    {keys:['观看','怎么','方式'], target:'#howto', name:'观看方式'}
+  ];
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q = (input.value || '').trim();
+    if(!q){ hint.textContent = '请输入剧名或题材关键词后再查找。'; return; }
+    var hit = null;
+    for(var i=0;i<map.length;i++){
+      for(var j=0;j<map[i].keys.length;j++){
+        if(q.indexOf(map[i].keys[j]) > -1){ hit = map[i]; break; }
+      }
+      if(hit) break;
+    }
+    if(hit){
+      hint.textContent = '已定位到「' + hit.name + '」相关分区。';
+      var el = document.querySelector(hit.target);
+      if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    } else {
+      hint.textContent = '未匹配到题材关键词，可从热门短剧分区开始浏览。';
+      var hot = document.querySelector('#hot');
+      if(hot){ hot.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+  });
+})();
+</script>
+</body>
+</html>
