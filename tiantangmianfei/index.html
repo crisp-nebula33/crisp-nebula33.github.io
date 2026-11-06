@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天堂免费电影在线观看免费-免费电影在线观看_高清影片片单_在线观影入口</title>
+<meta name="description" content="天堂免费电影在线观看免费提供免费电影在线观看的入口与片单，按剧情、动作、喜剧等类型整理可在线观看的影片，并说明高清观看、片单筛选与常见问题，帮助访客快速找到想看的电影。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1626'/%3E%3Cpath d='M24 18l20 14-20 14z' fill='%23ffb547'/%3E%3Ccircle cx='18' cy='20' r='3' fill='%23ff6b6b'/%3E%3Ccircle cx='18' cy='32' r='3' fill='%2358c6b0'/%3E%3Ccircle cx='18' cy='44' r='3' fill='%23ffb547'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0b1120;
+  --bg-soft:#111a2e;
+  --card:#16203a;
+  --line:rgba(255,255,255,.09);
+  --text:#eef2f9;
+  --muted:#9aa8c2;
+  --gold:#ffb547;
+  --coral:#ff6b6b;
+  --mint:#58c6b0;
+  --radius:16px;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+.skip{position:absolute;left:-9999px;}
+.skip:focus{left:12px;top:12px;background:var(--gold);color:#0b1120;padding:8px 14px;border-radius:8px;z-index:99;}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,17,32,.86);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  display:flex;align-items:center;gap:24px;
+  min-height:68px;flex-wrap:wrap;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-weight:700;font-size:17px;letter-spacing:.5px;
+  color:var(--text);
+}
+.logo .mark{
+  width:36px;height:36px;flex:0 0 36px;
+  border-radius:10px;background:linear-gradient(140deg,#1d2b4d,#0f1626);
+  display:grid;place-items:center;
+  border:1px solid var(--line);
+}
+.logo .mark svg{width:20px;height:20px;}
+nav.main{margin-left:auto;}
+nav.main ul{
+  display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap;
+}
+nav.main a{
+  display:inline-block;padding:7px 12px;border-radius:9px;
+  font-size:14.5px;color:var(--muted);transition:.2s;
+}
+nav.main a:hover,nav.main a:focus-visible{color:var(--text);background:rgba(255,255,255,.06);}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+  background:
+    radial-gradient(900px 380px at 12% -10%,rgba(255,181,71,.13),transparent 65%),
+    radial-gradient(760px 360px at 92% 0%,rgba(88,198,176,.12),transparent 62%),
+    var(--bg-soft);
+}
+.hero-inner{
+  display:grid;grid-template-columns:1.25fr .75fr;gap:48px;
+  padding:64px 0 60px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;color:var(--gold);
+  border:1px solid rgba(255,181,71,.35);
+  background:rgba(255,181,71,.08);
+  padding:5px 12px;border-radius:999px;margin:0 0 18px;
+}
+.hero h1{
+  font-size:clamp(26px,3.4vw,40px);
+  line-height:1.3;margin:0 0 18px;letter-spacing:.5px;
+  font-weight:800;
+}
+.hero h1 em{font-style:normal;color:var(--gold);}
+.hero p.lead{
+  margin:0 0 26px;color:var(--muted);font-size:16.5px;max-width:34em;
+}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:11px;font-size:15px;font-weight:600;
+  border:1px solid transparent;transition:.2s;cursor:pointer;
+}
+.btn-primary{background:var(--gold);color:#141a28;}
+.btn-primary:hover{background:#ffc76b;}
+.btn-ghost{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03);}
+.btn-ghost:hover{background:rgba(255,255,255,.08);}
+.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;}
+
+.hero-art{
+  border:1px solid var(--line);border-radius:22px;
+  background:linear-gradient(160deg,#182votes,#131c31);
+  background:linear-gradient(160deg,#1b2540,#121a2c);
+  padding:18px;
+}
+.hero-art .screen{
+  border-radius:14px;overflow:hidden;border:1px solid var(--line);
+  background:#0d1424;
+}
+.hero-art .meta{
+  display:flex;justify-content:space-between;gap:10px;
+  font-size:12.5px;color:var(--muted);padding:12px 4px 0;
+}
+.hero-art .meta b{color:var(--mint);font-weight:600;}
+
+/* section common */
+section{padding:66px 0;}
+.sec-head{margin-bottom:30px;max-width:44em;}
+.sec-head h2{
+  font-size:clamp(21px,2.4vw,27px);margin:0 0 10px;font-weight:750;letter-spacing:.3px;
+}
+.sec-head p{margin:0;color:var(--muted);font-size:15.5px;}
+.kicker{
+  font-size:12.5px;letter-spacing:2px;color:var(--gold);
+  text-transform:uppercase;margin:0 0 10px;font-weight:600;
+}
+
+/* filter */
+.filters{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  margin-bottom:26px;
+}
+.chip{
+  padding:8px 16px;border-radius:999px;font-size:14px;
+  border:1px solid var(--line);background:rgba(255,255,255,.03);
+  color:var(--muted);cursor:pointer;transition:.18s;
+}
+.chip:hover{color:var(--text);border-color:rgba(255,181,71,.4);}
+.chip[aria-pressed="true"]{background:var(--gold);color:#141a28;border-color:var(--gold);font-weight:600;}
+.search-box{
+  display:flex;align-items:center;gap:8px;margin-left:auto;
+  border:1px solid var(--line);border-radius:999px;
+  padding:6px 8px 6px 14px;background:rgba(255,255,255,.03);
+}
+.search-box input{
+  background:transparent;border:0;outline:0;color:var(--text);
+  font-size:14px;width:180px;font-family:inherit;
+}
+.search-box input::placeholder{color:#6b7a95;}
+.search-box button{
+  border:0;border-radius:999px;background:var(--gold);color:#141a28;
+  font-size:13px;font-weight:600;padding:6px 14px;cursor:pointer;font-family:inherit;
+}
+
+/* cards */
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--card);overflow:hidden;
+  display:flex;flex-direction:column;transition:.22s;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(255,181,71,.35);}
+.card .thumb{
+  aspect-ratio:16/9;background:#0e1626;position:relative;overflow:hidden;
+}
+.card .thumb svg{width:100%;height:100%;}
+.card .tag{
+  position:absolute;left:12px;top:12px;
+  font-size:11.5px;padding:3px 9px;border-radius:6px;
+  background:rgba(11,17,32,.78);color:var(--gold);border:1px solid rgba(255,181,71,.35);
+}
+.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.card-body h3{margin:0;font-size:16.5px;font-weight:700;}
+.card-body p{margin:0;font-size:14px;color:var(--muted);flex:1;}
+.card-foot{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12.5px;color:#7f8da8;padding-top:4px;
+}
+.card-foot .go{color:var(--mint);font-weight:600;}
+.empty{
+  display:none;padding:34px;text-align:center;color:var(--muted);
+  border:1px dashed var(--line);border-radius:var(--radius);font-size:14.5px;
+}
+
+/* guide / steps */
+.split{
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;
+}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;}
+.steps li{
+  position:relative;padding:0 0 22px 52px;counter-increment:s;
+}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);
+  position:absolute;left:0;top:0;
+  width:36px;height:36px;border-radius:10px;
+  display:grid;place-items:center;
+  background:rgba(255,181,71,.12);color:var(--gold);
+  font-size:13px;font-weight:700;border:1px solid rgba(255,181,71,.28);
+}
+.steps li strong{display:block;font-size:15.5px;margin-bottom:4px;}
+.steps li span{color:var(--muted);font-size:14.5px;}
+.note{
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--bg-soft);padding:24px;
+}
+.note h3{margin:0 0 12px;font-size:16.5px;}
+.note ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px;}
+.note li{margin-bottom:9px;}
+.note li:last-child{margin-bottom:0;}
+
+/* types */
+.types{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.type{
+  border:1px solid var(--line);border-radius:14px;
+  padding:20px 18px;background:linear-gradient(160deg,#16203a,#121a2c);
+}
+.type .ic{
+  width:36px;height:36px;border-radius:9px;display:grid;place-items:center;
+  background:rgba(88,198,176,.12);margin-bottom:12px;
+}
+.type h3{margin:0 0 6px;font-size:15.5px;}
+.type p{margin:0;font-size:13.5px;color:var(--muted);}
+
+/* faq */
+.faq{display:grid;gap:14px;max-width:58em;}
+details{
+  border:1px solid var(--line);border-radius:12px;
+  background:var(--bg-soft);padding:0 20px;
+}
+details[open]{border-color:rgba(255,181,71,.3);}
+summary{
+  padding:16px 0;cursor:pointer;font-size:15.5px;font-weight:600;
+  list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--gold);font-size:18px;font-weight:400;}
+details[open] summary::after{content:"–";}
+details p{margin:0 0 18px;color:var(--muted);font-size:14.5px;}
+
+/* footer */
+footer.site{
+  border-top:1px solid var(--line);
+  background:#080d18;padding:44px 0 30px;
+}
+.foot-top{
+  display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;
+  padding-bottom:26px;border-bottom:1px solid var(--line);
+}
+.foot-brand{max-width:32em;}
+.foot-brand p{margin:12px 0 0;color:var(--muted);font-size:14px;}
+.foot-links{display:flex;gap:44px;flex-wrap:wrap;}
+.foot-links h4{margin:0 0 12px;font-size:13.5px;color:var(--text);letter-spacing:1px;}
+.foot-links ul{list-style:none;margin:0;padding:0;}
+.foot-links li{margin-bottom:8px;}
+.foot-links a{font-size:13.5px;color:var(--muted);}
+.foot-links a:hover{color:var(--gold);}
+.copy{
+  padding-top:22px;display:flex;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;font-size:12.5px;color:#6b7a95;
+}
+
+@media (max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:34px;padding:46px 0 44px;}
+  .hero-art{max-width:520px;}
+  .grid{grid-template-columns:repeat(2,1fr);}
+  .types{grid-template-columns:repeat(2,1fr);}
+  .split{grid-template-columns:1fr;gap:28px;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .head-inner{min-height:auto;padding:12px 0;gap:10px;}
+  .logo{font-size:15px;}
+  .logo .mark{width:32px;height:32px;flex:0 0 32px;}
+  nav.main{margin-left:0;width:100%;}
+  nav.main ul{gap:2px;}
+  nav.main a{padding:6px 9px;font-size:13.5px;}
+  section{padding:46px 0;}
+  .grid{grid-template-columns:1fr;}
+  .types{grid-template-columns:1fr;}
+  .search-box{margin-left:0;width:100%;}
+  .search-box input{width:100%;}
+  .cta-row .btn{flex:1 1 auto;justify-content:center;}
+  .foot-links{gap:28px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="site">
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="天堂免费电影在线观看免费 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <rect x="2" y="4" width="20" height="16" rx="3" stroke="#ffb547" stroke-width="1.6"/>
+          <path d="M10 9l6 3-6 3z" fill="#ffb547"/>
+        </svg>
+      </span>
+      天堂免费电影在线观看免费
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#films">免费片单</a></li>
+        <li><a href="#howto">观看方式</a></li>
+        <li><a href="#types">类型导航</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <div>
+        <p class="eyebrow">免费观影 · 在线片单 · 高清播放</p>
+        <h1>天堂免费电影在线观看免费</h1>
+        <p class="lead">天堂免费电影在线观看免费把“想看电影”这件事变得直接：先在片单里按类型挑片，再进入在线播放页观看。页面整理可在线观看的影片条目、清晰的分区导航与观看说明，帮助你快速判断一部片子是否值得点开，而不必在层层跳转里消耗耐心。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#films">进入免费片单</a>
+          <a class="btn btn-ghost" href="#howto">了解观看方式</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="screen">
+          <svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="在线观影界面示意">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1e2a48"/>
+                <stop offset="1" stop-color="#0d1424"/>
+              </linearGradient>
+            </defs>
+            <rect width="480" height="270" fill="url(#g1)"/>
+            <circle cx="390" cy="46" r="70" fill="#ffb547" opacity=".10"/>
+            <circle cx="70" cy="230" r="90" fill="#58c6b0" opacity=".10"/>
+            <rect x="28" y="30" width="424" height="150" rx="10" fill="#0a1120" stroke="#2a3a5c"/>
+            <path d="M212 78l46 27-46 27z" fill="#ffb547"/>
+            <rect x="28" y="196" width="120" height="10" rx="5" fill="#31415f"/>
+            <rect x="28" y="216" width="200" height="8" rx="4" fill="#233149"/>
+            <rect x="28" y="234" width="150" height="8" rx="4" fill="#233149"/>
+            <rect x="332" y="192" width="120" height="50" rx="8" fill="#1a2540" stroke="#2a3a5c"/>
+            <rect x="344" y="204" width="60" height="7" rx="3.5" fill="#ffb547" opacity=".7"/>
+            <rect x="344" y="220" width="94" height="6" rx="3" fill="#31415f"/>
+          </svg>
+        </div>
+        <div class="meta">
+          <span>片单持续更新</span>
+          <b>在线播放</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="films">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">免费片单</p>
+        <h2>今天可以从哪部开始看</h2>
+        <p>下面六部是天堂免费电影在线观看免费中较有代表性的条目，覆盖剧情、动作、喜剧、动画与悬疑等方向。点选类型或输入片名可缩小范围，所有条目均为可在线观看的电影，卡片中的简介用于快速判断是否合口味。</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="片单筛选">
+        <button class="chip" type="button" data-type="all" aria-pressed="true">全部</button>
+        <button class="chip" type="button" data-type="剧情" aria-pressed="false">剧情</button>
+        <button class="chip" type="button" data-type="动作" aria-pressed="false">动作</button>
+        <button class="chip" type="button" data-type="喜剧" aria-pressed="false">喜剧</button>
+        <button class="chip" type="button" data-type="动画" aria-pressed="false">动画</button>
+        <button class="chip" type="button" data-type="悬疑" aria-pressed="false">悬疑</button>
+        <div class="search-box">
+          <label for="q" class="skip">搜索片名</label>
+          <input id="q" type="search" placeholder="输入片名关键词" autocomplete="off">
+          <button type="button" id="qbtn">搜索</button>
+        </div>
+      </div>
+
+      <div class="grid" id="filmGrid">
+        <article class="card" data-type="剧情" data-name="长夜将尽">
+          <div class="thumb">
+            <span class="tag">剧情</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#131d33"/>
+              <circle cx="250" cy="50" r="34" fill="#ffb547" opacity=".25"/>
+              <path d="M0 140 L90 96 L170 132 L250 88 L320 124 V180 H0Z" fill="#1d2a48"/>
+              <path d="M0 156 L100 122 L190 150 L280 118 L320 138 V180 H0Z" fill="#121a2c"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>长夜将尽</h3>
+            <p>小城冬夜，一位夜班司机在最后几趟车里，遇见了改变他判断的三位乘客。</p>
+            <div class="card-foot"><span>剧情 · 慢节奏</span><span class="go">在线观看 →</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-type="动作" data-name="铁轨之上">
+          <div class="thumb">
+            <span class="tag">动作</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#151c2f"/>
+              <path d="M40 180 L120 40 L200 180Z" fill="#233149"/>
+              <path d="M160 180 L230 60 L300 180Z" fill="#1a2540"/>
+              <circle cx="120" cy="40" r="10" fill="#ff6b6b"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>铁轨之上</h3>
+            <p>退役特警为追回被劫的货运列车，在移动的车厢间展开一场没有退路的追捕。</p>
+            <div class="card-foot"><span>动作 · 追逐</span><span class="go">在线观看 →</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-type="喜剧" data-name="合租第七天">
+          <div class="thumb">
+            <span class="tag">喜剧</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#161f34"/>
+              <rect x="50" y="60" width="90" height="70" rx="8" fill="#243354"/>
+              <rect x="170" y="80" width="100" height="50" rx="8" fill="#1b2742"/>
+              <circle cx="95" cy="52" r="14" fill="#ffb547" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>合租第七天</h3>
+            <p>四个作息完全错开的年轻人住进同一套房，第七天他们决定用一顿饭解决问题。</p>
+            <div class="card-foot"><span>喜剧 · 群像</span><span class="go">在线观看 →</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-type="动画" data-name="云上邮局">
+          <div class="thumb">
+            <span class="tag">动画</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#121c31"/>
+              <path d="M0 130 Q80 96 160 126 T320 118 V180 H0Z" fill="#1e2b49"/>
+              <circle cx="220" cy="58" r="26" fill="#ffb547" opacity=".35"/>
+              <circle cx="92" cy="52" r="18" fill="#58c6b0" opacity=".3"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>云上邮局</h3>
+            <p>一座建在云层上的邮局，把寄不出去的信送往它们真正该去的地方。</p>
+            <div class="card-foot"><span>动画 · 治愈</span><span class="go">在线观看 →</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-type="悬疑" data-name="回声房间">
+          <div class="thumb">
+            <span class="tag">悬疑</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#101828"/>
+              <rect x="88" y="34" width="144" height="112" rx="6" fill="#1a2540" stroke="#2c3d60"/>
+              <rect x="132" y="70" width="56" height="40" rx="4" fill="#0d1424" stroke="#58c6b0" opacity=".6"/>
+              <circle cx="160" cy="90" r="6" fill="#ffb547"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>回声房间</h3>
+            <p>录音师在一段废弃素材里听到不属于任何人的声音，追查由此开始。</p>
+            <div class="card-foot"><span>悬疑 · 推理</span><span class="go">在线观看 →</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-type="剧情" data-name="岸边的信号">
+          <div class="thumb">
+            <span class="tag">剧情</span>
+            <svg viewBox="0 0 320 180" aria-hidden="true">
+              <rect width="320" height="180" fill="#131f36"/>
+              <rect y="112" width="320" height="68" fill="#1b2947"/>
+              <path d="M0 112 Q60 100 120 112 T240 112 T320 112" stroke="#58c6b0" stroke-width="2" fill="none" opacity=".6"/>
+              <rect x="228" y="62" width="16" height="50" fill="#2c3d60"/>
+              <circle cx="236" cy="58" r="9" fill="#ffb547"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>岸边的信号</h3>
+            <p>灯塔看守人的女儿回到海边小镇，重新整理父亲留下的日志与一段旧频率。</p>
+            <div class="card-foot"><span>剧情 · 家庭</span><span class="go">在线观看 →</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="empty" id="empty">没有匹配的片名，换个关键词或点“全部”再看看。</p>
+    </div>
+  </section>
+
+  <section id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">观看方式</p>
+        <h2>三步找到并播放一部电影</h2>
+        <p>天堂免费电影在线观看免费希望把路径压到最短：先确定类型，再看简介，最后进入播放页。下面三步对应页面上的实际操作顺序，桌面端与手机端的操作位置一致。</p>
+      </div>
+      <div class="split">
+        <ol class="steps">
+          <li>
+            <strong>用类型或片名缩小范围</strong>
+            <span>在“免费片单”上方的筛选中点选剧情、动作、喜剧、动画或悬疑，也可以在搜索框输入片名关键词，列表会即时更新。</span>
+          </li>
+          <li>
+            <strong>读简介判断是否合口味</strong>
+            <span>每张卡片给出类型、节奏与一句话梗概。先看简介再看片名，可以避免点开后才发现题材不对。</span>
+          </li>
+          <li>
+            <strong>进入在线播放页观看</strong>
+            <span>点击卡片下方的“在线观看”进入对应播放页。播放页支持在线播放，无需另行安装客户端。</span>
+          </li>
+        </ol>
+        <aside class="note">
+          <h3>观看前值得确认的几件事</h3>
+          <ul>
+            <li>网络状况直接影响清晰度，播放前可先确认当前带宽是否稳定。</li>
+            <li>手机观看建议横屏并打开免打扰，减少中途切屏造成的加载中断。</li>
+            <li>片单条目按类型与题材归档，同一部影片不会在不同分区重复出现。</li>
+            <li>页面上的片单与简介用于辅助选择，实际播放以播放页为准。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="types">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">类型导航</p>
+        <h2>按心情选片，比按片名更快</h2>
+        <p>不知道看什么的时候，先从当下的状态出发。天堂免费电影在线观看免费把片单按四种常见观影需求归类，每类对应不同的节奏与情绪，方便直接对号入座。</p>
+      </div>
+      <div class="types">
+        <div class="type">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M4 18V9l8-5 8 5v9" stroke="#58c6b0" stroke-width="1.6"/><path d="M9 18v-5h6v5" stroke="#58c6b0" stroke-width="1.6"/></svg>
+          </div>
+          <h3>想安静看完一部</h3>
+          <p>剧情片节奏舒缓，适合一个人、一盏灯、一个不被打断的晚上。</p>
+        </div>
+        <div class="type">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M3 12h6l3-7 3 14 3-7h3" stroke="#ffb547" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>需要一点刺激</h3>
+          <p>动作与悬疑适合注意力集中的时段，追逐与反转能把疲惫感顶回去。</p>
+        </div>
+        <div class="type">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><circle cx="12" cy="12" r="8" stroke="#ff6b6b" stroke-width="1.6"/><path d="M9 14c1.2 1.4 4.8 1.4 6 0" stroke="#ff6b6b" stroke-width="1.6" stroke-linecap="round"/><circle cx="9.5" cy="10" r="1" fill="#ff6b6b"/><circle cx="14.5" cy="10" r="1" fill="#ff6b6b"/></svg>
+          </div>
+          <h3>只想轻松一下</h3>
+          <p>喜剧适合下饭或睡前，篇幅之外不必背负太多情绪负担。</p>
+        </div>
+        <div class="type">
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 16c2-6 4-8 7-8s5 2 7 8" stroke="#58c6b0" stroke-width="1.6" stroke-linecap="round"/><path d="M8 19h8" stroke="#58c6b0" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>陪孩子一起看</h3>
+          <p>动画区以画面友好、叙事清楚为选片标准，适合全家共同观看。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">常见问题</p>
+        <h2>关于免费在线观看的几个疑问</h2>
+        <p>下面这些问题来自访客最常提出的关注点，回答只涉及本页能确认的范围，不替播放页之外的环节作承诺。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>天堂免费电影在线观看免费里的影片真的免费吗？</summary>
+          <p>本页列出的片单条目以免费在线观看为定位，进入播放页后即可在线播放，不设会员门槛的说明适用于这些条目本身。若播放页出现与片单不一致的提示，以播放页显示为准。</p>
+        </details>
+        <details>
+          <summary>片单多久更新一次？</summary>
+          <p>片单按可观看内容调整，新增条目会补充到对应类型分区，并在简介中标注题材与节奏。页面不承诺固定更新频率。</p>
+        </details>
+        <details>
+          <summary>手机上能直接看吗？</summary>
+          <p>可以。页面本身适配手机屏幕，筛选、搜索与卡片点击在触屏上均可操作；进入播放页后建议横屏观看，以获得更好的画面比例。</p>
+        </details>
+        <details>
+          <summary>找不到想看的片子怎么办？</summary>
+          <p>先用搜索框尝试片名关键词，再点击“全部”恢复完整列表。若仍没有结果，说明该片暂未收录在本页片单中，可稍后再来查看。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="4" width="20" height="16" rx="3" stroke="#ffb547" stroke-width="1.6"/>
+              <path d="M10 9l6 3-6 3z" fill="#ffb547"/>
+            </svg>
+          </span>
+          天堂免费电影在线观看免费
+        </a>
+        <p>天堂免费电影在线观看免费以片单与类型导航为核心，帮助访客快速找到可在线观看的电影，并了解观看前的准备事项。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>页面导航</h4>
+          <ul>
+            <li><a href="#films">免费片单</a></li>
+            <li><a href="#howto">观看方式</a></li>
+            <li><a href="#types">类型导航</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>观影类型</h4>
+          <ul>
+            <li><a href="#films">剧情片</a></li>
+            <li><a href="#films">动作片</a></li>
+            <li><a href="#films">喜剧片</a></li>
+            <li><a href="#films">动画片</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 天堂免费电影在线观看免费 · 片单与简介仅供选片参考</span>
+      <span>在线观影 · 免费片单 · 高清播放</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#filmGrid .card'));
+  var q = document.getElementById('q');
+  var qbtn = document.getElementById('qbtn');
+  var empty = document.getElementById('empty');
+  var activeType = 'all';
+
+  function apply(){
+    var kw = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(c){
+      var typeOk = activeType === 'all' || c.getAttribute('data-type') === activeType;
+      var name = (c.getAttribute('data-name') || '').toLowerCase();
+      var textOk = !kw || name.indexOf(kw) !== -1;
+      var show = typeOk && textOk;
+      c.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      activeType = chip.getAttribute('data-type');
+      chips.forEach(function(c){ c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+      apply();
+    });
+  });
+
+  q.addEventListener('input', apply);
+  q.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); apply(); } });
+  qbtn.addEventListener('click', apply);
+})();
+</script>
+</body>
+  </html>
